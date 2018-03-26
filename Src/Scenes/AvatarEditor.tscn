@@ -1,0 +1,175 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/AvatarEditor.gd" type="Script" id=1]
+[ext_resource path="res://avatar_ts.tres" type="TileSet" id=2]
+[ext_resource path="res://Images/ts_select_cursor.png" type="Texture" id=3]
+[ext_resource path="res://Images/ts_selected_cursor.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30.1314, 24.4535 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 250.352, 209.999 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 76.5451, 38.1079 )
+
+[node name="AvatarEditor" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="BG" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[node name="PaletteArea" type="Area2D" parent="BG" index="0"]
+
+position = Vector2( 145.745, 258.985 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Palette" type="TileMap" parent="BG/PaletteArea" index="0"]
+
+position = Vector2( -33, -20 )
+mode = 0
+tile_set = null
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+_sections_unfolded = [ "Cell", "Material" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/PaletteArea" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="CanvasArea" type="Area2D" parent="BG" index="1"]
+
+position = Vector2( 324.726, 108.986 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Canvas" type="TileMap" parent="BG/CanvasArea" index="0"]
+
+position = Vector2( -21.3255, -6.5778 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray(  )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/CanvasArea" index="1"]
+
+position = Vector2( 310, 180 )
+shape = SubResource( 3 )
+
+[node name="ToolArea" type="Area2D" parent="BG" index="2"]
+
+position = Vector2( 120.925, 110.887 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tools" type="TileMap" parent="BG/ToolArea" index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 2, 0, 3, 3, 0, 4, 4, 0, 5, 5, 0, 6, 6, 0, 7, 7, 0, 8, 8, 0, 9, 9, 0, 65536, 10, 0, 65537, 11, 0, 65538, 12, 0, 65539, 13, 0, 65540, 14, 0, 65541, 15, 0, 65542, 16, 0, 65543, 17, 0, 65544, 18, 0, 65545, 19, 0, 131072, 20, 0, 131073, 21, 0, 131074, 22, 0, 131075, 23, 0, 131076, 24, 0, 131077, 25, 0, 131078, 26, 0, 131079, 27, 0, 131080, 28, 0, 131081, 29, 0, 196608, 30, 0, 196609, 31, 0, 196610, 32, 0, 196611, 33, 0, 196612, 34, 0, 196613, 35, 0, 196614, 36, 0, 196615, 37, 0, 196616, 38, 0, 196617, 39, 0, 262144, 40, 0, 262145, 41, 0, 262146, 42, 0, 262147, 43, 0, 262148, 44, 0, 262149, 45, 0, 262150, 46, 0, 262151, 47, 0, 262152, 48, 0, 262153, 49, 0 )
+
+[node name="Cursor" type="Sprite" parent="BG/ToolArea/Tools" index="0"]
+
+position = Vector2( 10, 10 )
+texture = ExtResource( 3 )
+
+[node name="Selected" type="Sprite" parent="BG/ToolArea/Tools" index="1"]
+
+position = Vector2( 10, 10 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BG/ToolArea" index="1"]
+
+position = Vector2( 78, 39 )
+shape = SubResource( 2 )
+
+[connection signal="input_event" from="BG/CanvasArea" to="." method="_on_CanvasArea_input_event"]
+
+[connection signal="mouse_entered" from="BG/CanvasArea" to="." method="_on_CanvasArea_mouse_entered"]
+
+[connection signal="mouse_exited" from="BG/CanvasArea" to="." method="_on_CanvasArea_mouse_exited"]
+
+[connection signal="input_event" from="BG/ToolArea" to="." method="_on_tool_input_event"]
+
+

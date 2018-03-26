@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="VXCreator"
+run/main_scene="res://Scenes/OSLoadNode/OSLoadNode.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://Scripts/global.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "hacktop_progress" )
+
+[gdnative]
+
+singletons=[  ]
+
+[input]
+
+mouse_lclick=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+environment/default_environment="res://default_env.tres"
