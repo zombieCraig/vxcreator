@@ -6,7 +6,7 @@ func savePrefs():
 	global.prefs["ShowWelcomeMsg"] = get_node("WelcomeMsgToggle").is_pressed()
 	var prefFile = File.new()
 	prefFile.open(global.PREF_FILE, File.WRITE)
-	prefFile.store_string(global.prefs.to_json())
+	prefFile.store_string(to_json(global.prefs))
 	OS.set_window_fullscreen(global.prefs["Fullscreen"])
 
 func _ready():

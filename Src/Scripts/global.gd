@@ -5,6 +5,7 @@ const VX_VERSION = "0.0.6"
 var resource_queue = null # ResourceLoader Queue
 var current_scene = null
 
+const PREF_FILE = "user://profile.dat"
 var prefs = {
 		"Fullscreen": false,
 		"Sound": true,
