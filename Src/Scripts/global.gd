@@ -5,6 +5,11 @@ const VX_VERSION = "0.0.6"
 var resource_queue = null # ResourceLoader Queue
 var current_scene = null
 
+var prefs = {
+		"Fullscreen": false,
+		"Sound": true,
+		"ShowWelcomeMsg": true}
+
 func _ready():
 	resource_queue = preload("res://Scripts/resource_queue.gd").new()
 	resource_queue.start()
