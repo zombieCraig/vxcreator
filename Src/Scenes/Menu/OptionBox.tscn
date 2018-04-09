@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Menu/OptionBox.gd" type="Script" id=1]
 [ext_resource path="res://Images/Menu/MenuPanel.png" type="Texture" id=2]
@@ -9,6 +9,27 @@
 [ext_resource path="res://Images/Menu/MenuButtonBack.png" type="Texture" id=7]
 [ext_resource path="res://Images/Menu/MenuButtonBackHover.png" type="Texture" id=8]
 [ext_resource path="res://Images/Menu/OptionWelcomeMsg.png" type="Texture" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
 
 [node name="OptionBox" type="Node2D" index="0"]
 
@@ -123,13 +144,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_icons/off = ExtResource( 4 )
 custom_icons/on = ExtResource( 5 )
+custom_styles/focus = SubResource( 1 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
 flat = false
 align = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "custom_styles" ]
 
 [node name="SoundSettingsLabel" type="Label" parent="." index="5"]
 
@@ -193,13 +215,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_icons/off = ExtResource( 4 )
 custom_icons/on = ExtResource( 5 )
+custom_styles/focus = SubResource( 4 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
 flat = false
 align = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "custom_styles" ]
 
 [node name="BackButton" type="TextureButton" parent="." index="8"]
 
@@ -287,13 +310,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_icons/off = ExtResource( 4 )
 custom_icons/on = ExtResource( 5 )
+custom_styles/focus = SubResource( 3 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
 flat = false
 align = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_styles" ]
 
 [connection signal="toggled" from="FullScreenToggle" to="." method="_on_FullScreenToggle_toggled"]
 
