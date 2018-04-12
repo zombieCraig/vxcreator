@@ -1,9 +1,9 @@
 extends TextureButton
 
-var Vs = [-2, -6, -8] # velocities for each "bounce"
+var notify = false; var Vs = [-2, -6, -8] # velocities for each "bounce"
 var V; var a; var bounce; var origin;
-func setup():
-	self.disconnect("pressed", self, "setup")
+func enable():
+	notify = true
 	a = 0.5
 	bounce = 2
 	V = Vs[bounce]
@@ -15,17 +15,21 @@ func step(c):
 		V += a
 		return c
 	c.y = origin
+	if not notify: # stop bouncing
+		self.set_physics_process(false)
+		return c
 	if bounce > 0: # bounce off the "ground"
 		bounce -= 1
 		V = Vs[bounce]
 		return c
-	# stop bouncing
-	self.set_physics_process(false)
-	self.connect("pressed", self, "setup")
+	# restart bouncing
+	bounce = 2
+	V = Vs[bounce]
 	return c
+func disable():
+	notify = false
 
 func _ready():
-	self.connect("pressed", self, "setup")
 	self.set_physics_process(false)
 
 func _physics_process(delta):
