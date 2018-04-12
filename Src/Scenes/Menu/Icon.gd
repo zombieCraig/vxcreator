@@ -14,6 +14,7 @@ func step(c):
 	if c.y < origin: # on the rise
 		V += a
 		return c
+	c.y = origin
 	if bounce > 0: # bounce off the "ground"
 		bounce -= 1
 		V = Vs[bounce]
