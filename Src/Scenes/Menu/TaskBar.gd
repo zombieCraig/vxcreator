@@ -4,17 +4,18 @@ var timer = 0
 func hide():
 	$Icons.position.y = 81
 	timer = 0
-	set_process(true)
+	set_physics_process(true)
 
 func show():
 	$Icons.position.y = 0
-	set_process(false)
+	set_physics_process(false)
 
 func _ready():
 	hide()
+	$Icons/MainIcon.enable()
 
 var dir = 0
-func _process(delta):
+func _physics_process(delta):
 	var port = get_viewport()
 	if port.get_visible_rect().size.y - port.get_mouse_position().y <= 81:
 		timer += delta
