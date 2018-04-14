@@ -13,16 +13,19 @@ func show():
 func _ready():
 	hide()
 
+var dir = 0
 func _process(delta):
 	var port = get_viewport()
-	var h = port.get_visible_rect().size.y
-	var y = port.get_mouse_position().y
-	
-	if h - y <= 81:
+	if port.get_visible_rect().size.y - port.get_mouse_position().y <= 81:
 		timer += delta
 	else:
-		timer = 0
-		$Icons.position.y = 81
+		timer = 0; dir = 1000;
 	if timer >= 1:
-		timer = 1
-		$Icons.position.y = 0
+		timer = 1; dir = -1000
+	if dir == 0:
+		return
+	if dir < 0 and $Icons.position.y <= 0:
+		dir = 0; return
+	if dir > 0 and $Icons.position.y >= 81:
+		dir = 0; return
+	$Icons.position.y += dir * delta
