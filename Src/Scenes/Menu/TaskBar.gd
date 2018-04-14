@@ -1,16 +1,14 @@
-extends Node2D
-
-var offset = 81 # height of taskbar
-func relocate():
-	var winsz = get_viewport().get_visible_rect().size
-	self.position.y = winsz.y - offset
+extends Control
 
 func show():
-	offset = 81; relocate()
+	pass
 
 func hide():
-	offset = 0; relocate()
+	$Icons.position.y += rect_size.y
+	connect("mouse_entered", self, "start_hover")
+
+func start_hover():
+	print('entered')
 
 func _ready():
-	get_viewport().connect("size_changed", self, "relocate")
-	show()
+	pass
