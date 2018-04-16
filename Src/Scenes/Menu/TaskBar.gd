@@ -25,7 +25,7 @@ func _process(delta):
 var notify = false
 onready var icons = {$MainIcon: false}
 var vs = [-2, -5, -8]
-var v = -5; var a = 0.5; var t = 0; var bounce = 2
+var bounce = 2; var v = vs[bounce]; var a = 0.5; var t = 0
 func bounce(delta):
 	t += delta
 	while t >= 0.02:
