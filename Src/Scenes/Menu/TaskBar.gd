@@ -25,7 +25,7 @@ func _process(delta):
 var notify = false
 onready var icons = {$MainIcon: false}
 var vs = [-2, -5, -8]
-var bounce = 2; var v = vs[bounce]; var a = 0.5; var t = 0
+var bounces = 2; var v = vs[bounces]; var a = 0.5; var t = 0
 func bounce(delta):
 	t += delta
 	while t >= 0.02:
@@ -42,10 +42,10 @@ func step():
 			return
 		p.y = 0
 		icon.set_position(p)
-		bounce -= 1
-		if bounce < 0:
-			bounce = 2
-		v = vs[bounce]; t = 0
+		bounces -= 1
+		if bounces < 0:
+			bounces = 2
+		v = vs[bounces]; t = 0
 
 var slide_v = 0
 func start_slide(dir):
