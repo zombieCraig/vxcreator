@@ -24,12 +24,14 @@ func _process(delta):
 
 var notify = false
 onready var icons = {$MainIcon: false}
-var vs = [-1, -2, -5]
+var vs = [-2, -5, -8]
 var v = -5; var a = 0.5; var t = 0; var bounce = 2
 func bounce(delta):
 	t += delta
-	if t >= 0.05:
-		v += a; t -= 0.05
+	while t >= 0.02:
+		v += a; t -= 0.02
+		step()
+func step():
 	for icon in icons.keys():
 		if not icons[icon]:
 			continue
