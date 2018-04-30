@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func savePrefs():
 	global.prefs["Fullscreen"] = get_node("FullScreenToggle").is_pressed()

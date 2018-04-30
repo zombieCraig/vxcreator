@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Menu/Desktop.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Menu/ClockWidget.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Menu/MenuBox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Images/Menu/taskbar_glow.tex" type="Texture" id=4]
-[ext_resource path="res://Scenes/Menu/TaskBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Images/Menu/taskbar_glow.tex" type="Texture" id=2]
+[ext_resource path="res://Scenes/Menu/ClockWidget.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Menu/MenuBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Menu/OptionBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menu/TaskBar.tscn" type="PackedScene" id=6]
 
 [node name="Desktop" type="Control" index="0"]
 
@@ -12,6 +13,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -21,115 +26,7 @@ size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Margin", "Material" ]
 
-[node name="ClockPosition" type="Control" parent="." index="0"]
-
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -88.0
-margin_top = -97.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Margin" ]
-
-[node name="ClockWidget" parent="ClockPosition" index="0" instance=ExtResource( 2 )]
-
-scale = Vector2( 0.515696, 0.515696 )
-
-[node name="Fullscreen" type="Control" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="PrimaryPosition" type="Control" parent="." index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -371.0
-margin_bottom = -15.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="SecondaryPosition" type="Control" parent="." index="3"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 653.0
-margin_top = 261.0
-margin_bottom = -100.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
-
-[node name="TernaryPosition" type="Control" parent="." index="4"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 653.0
-margin_bottom = -341.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
-
-[node name="MenuPosition" type="Control" parent="." index="5"]
-
-visible = false
-anchor_left = 1.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
-margin_left = -764.0
-margin_right = -675.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="MenuBox" parent="MenuPosition" index="0" instance=ExtResource( 3 )]
-
-visible = false
-position = Vector2( 0, 0 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="TaskbarGlowPosition" type="Control" parent="." index="6"]
+[node name="TaskbarGlow" type="TextureRect" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -138,31 +35,56 @@ anchor_bottom = 1.0
 margin_top = -53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Windows" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="TaskbarGlow" type="TextureRect" parent="TaskbarGlowPosition" index="0"]
+[node name="ClockWidget" parent="Windows" index="0" instance=ExtResource( 3 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1029.0
-margin_bottom = 54.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 4 )
-expand = true
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -97.0
+margin_right = 79.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="TaskBar" parent="." index="7" instance=ExtResource( 5 )]
+[node name="MenuBox" parent="Windows" index="1" instance=ExtResource( 4 )]
 
-margin_right = -162.0
+margin_left = 265.0
+margin_right = 796.0
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="OptionBox" parent="Windows" index="2" instance=ExtResource( 5 )]
+
+margin_left = 265.0
+margin_right = 796.0
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="TaskBar" parent="." index="2" instance=ExtResource( 6 )]
+
+margin_right = -88.0
 _sections_unfolded = [ "Anchor", "Margin" ]
 
 

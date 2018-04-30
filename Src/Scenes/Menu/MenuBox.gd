@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _ready():
 	add_user_signal("story_pressed", [])
