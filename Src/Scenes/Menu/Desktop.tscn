@@ -68,19 +68,24 @@ margin_top = -97.0
 margin_right = 79.0
 margin_bottom = 70.0
 rect_scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="MenuBox" parent="Windows" index="1" instance=ExtResource( 4 )]
 
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 265.0
-margin_right = 796.0
-_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+margin_right = -228.0
+margin_bottom = 0.0
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Visibility" ]
 
 [node name="OptionBox" parent="Windows" index="2" instance=ExtResource( 5 )]
 
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 265.0
-margin_right = 796.0
-_sections_unfolded = [ "Margin", "Rect" ]
+margin_right = -228.0
+margin_bottom = 0.0
+_sections_unfolded = [ "Anchor" ]
 
 [node name="TaskBar" parent="." index="2" instance=ExtResource( 6 )]
 
