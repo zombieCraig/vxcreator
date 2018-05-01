@@ -1,6 +1,6 @@
 extends Control
 
-var DEBUG = true
+var DEBUG = false
 
 const MODE_CLOCK = 0
 const MODE_TIMER = 1

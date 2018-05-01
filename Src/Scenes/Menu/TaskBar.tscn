@@ -5,7 +5,7 @@
 [ext_resource path="res://Images/Menu/MainIconHover.png" type="Texture" id=3]
 [ext_resource path="res://Images/Menu/IconPlaceholder.png" type="Texture" id=4]
 
-[node name="TaskBar" type="Control"]
+[node name="TaskBar" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 1.0
@@ -19,7 +19,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Margin" ]
 
 [node name="UpTimer" type="Timer" parent="." index="0"]
 
