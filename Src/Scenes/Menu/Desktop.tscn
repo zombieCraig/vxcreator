@@ -55,7 +55,7 @@ margin_top = -97.0
 margin_right = 79.0
 margin_bottom = 70.0
 rect_scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Margin", "Visibility" ]
 
 [node name="Windows" type="Control" parent="." index="2"]
 
@@ -78,7 +78,7 @@ margin_left = 265.0
 margin_right = -228.0
 margin_bottom = 0.0
 rect_clip_content = true
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="OptionBox" parent="Windows" index="1" instance=ExtResource( 5 )]
 
