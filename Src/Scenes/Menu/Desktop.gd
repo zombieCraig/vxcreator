@@ -19,8 +19,6 @@ func maximize(win):
 		return
 	moves[win]['size'].x *= -1
 	moves[win]['size'].y *= -1
-	moves[win]['dx'] *= -1
-	moves[win]['dy'] *= -1
 	moves[win]['state'] = MAXIMIZE
 
 func minimize(win):
@@ -28,28 +26,21 @@ func minimize(win):
 		maximize(win)
 		moves[win]['state'] = MINIMIZE
 		return
-	moves[win] = { 'xy': win.rect_position,
-				   'size': win.rect_size,
-				   'dx': win.rect_position.x,
-				   'dy': win.rect_position.y - rect_size.y,
-				   'state': 0 }
+	moves[win] = { 'size': win.rect_size, 'state': 0 }
 
 func _process(delta):
 	for win in moves.keys():
 		if moves[win]['state'] == HIDDEN:
 			continue
 		if moves[win]['state'] == MAXIMIZE:
-			if win.rect_position.y <= moves[win]['xy'].y:
-				win.rect_position = moves[win]['xy']
+			if win.rect_size.y >= moves[win]['size'].abs().y:
 				win.rect_size = moves[win]['size'].abs()
 				moves.erase(win)
 				continue
 		if moves[win]['state'] == MINIMIZE:
-			if win.rect_position.y >= rect_size.y:
+			if win.rect_size.y <= 0:
 				win.hide()
 				moves[win]['state'] = HIDDEN
 		var scale = 5 * delta
-		win.rect_position.x -= moves[win]['dx'] * scale
-		win.rect_position.y -= moves[win]['dy'] * scale
 		win.rect_size.y -= moves[win]['size'].y * scale
 		win.rect_size.x -= moves[win]['size'].x * scale

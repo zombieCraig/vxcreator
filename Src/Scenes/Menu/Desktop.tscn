@@ -83,10 +83,11 @@ _sections_unfolded = [ "Rect" ]
 
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 265.0
-margin_right = -228.0
+margin_left = 345.0
+margin_right = -148.0
 margin_bottom = 0.0
 rect_clip_content = true
+_sections_unfolded = [ "Rect" ]
 
 [node name="Hidden" type="Control" parent="." index="3"]
 
