@@ -42,10 +42,10 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
-_sections_unfolded = [ "Margin" ]
 
 [node name="ClockWidget" parent="." index="1" instance=ExtResource( 3 )]
 
+modulate = Color( 1, 1, 1, 0.801098 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -55,6 +55,7 @@ margin_top = -97.0
 margin_right = 79.0
 margin_bottom = 70.0
 rect_scale = Vector2( 0.5, 0.5 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Windows" type="Control" parent="." index="2"]
 
@@ -164,7 +165,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Margin" ]
 
 [node name="ColorRect" type="ColorRect" parent="Windows/Tertiary" index="0"]
 

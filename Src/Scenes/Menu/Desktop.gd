@@ -28,7 +28,7 @@ func minimize(win):
 		return
 	moves[win] = { 'size': win.rect_size, 'state': 0 }
 
-func _process(delta):
+func transition(delta):
 	for win in moves.keys():
 		if moves[win]['state'] == HIDDEN:
 			continue
@@ -44,3 +44,15 @@ func _process(delta):
 		var scale = 5 * delta
 		win.rect_size.y -= moves[win]['size'].y * scale
 		win.rect_size.x -= moves[win]['size'].x * scale
+
+var a = -0.005
+var v = 0
+func pulse(delta):
+	if $TaskbarGlow.modulate.a <= 0.35:
+		v = 0.5
+	v += a
+	$TaskbarGlow.modulate.a += v * delta
+
+func _process(delta):
+	transition(delta)
+	pulse(delta)
