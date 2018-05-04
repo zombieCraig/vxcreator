@@ -22,7 +22,7 @@ func _process(delta):
 			last_state = EXITED
 
 var notify = false
-onready var icons = {$MainIcon: false, $OptionIcon: false}
+onready var icons = {$MainIcon: false}
 var vs = [-2, -5, -8]
 var bounces = 2; var v = vs[bounces]; var a = 0.5; var t = 0
 func bounce(delta):

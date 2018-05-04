@@ -31,6 +31,6 @@ func _on_WelcomeMsgToggle_toggled( pressed ):
 
 func _on_BackButton_pressed():
 	var Desktop = get_node("../..")
-	Desktop.hide_window(self)
+	Desktop.minimize(self)
 	savePrefs()
 	emit_signal("option_back_pressed", null)
