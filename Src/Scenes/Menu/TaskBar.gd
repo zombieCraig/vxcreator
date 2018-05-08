@@ -4,7 +4,6 @@ func _ready():
 	set_physics_process(false)
 	$UpTimer.connect("timeout", self, "start_slide", [-1])
 	$DownTimer.connect("timeout", self, "start_slide", [1])
-	get_attention($MainIcon)
 
 enum state { ENTERED, EXITED }
 var last_state = EXITED

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func _ready():
 	add_user_signal("story_pressed", [])
@@ -22,10 +22,15 @@ func _on_OnlineBtn_pressed():
 	emit_signal("online_pressed", [])
 
 func _on_OptionsBtn_pressed():
+	var Desktop = get_node("../..")
+	var OptionBox = get_node("../OptionBox")
+	Desktop.maximize(OptionBox)
 	emit_signal("options_pressed", [])
 
 func _on_LogoutBtn_pressed():
 	emit_signal("logout_pressed", null)
 
 func _on_CloseBtn_pressed():
+	var Desktop = get_node("../..")
+	Desktop.minimize(self)
 	emit_signal("close_main_menu_pressed", null)

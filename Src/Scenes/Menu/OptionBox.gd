@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func savePrefs():
 	global.prefs["Fullscreen"] = get_node("FullScreenToggle").is_pressed()
@@ -18,6 +18,7 @@ func _ready():
 		get_node("FullScreenToggle").set_pressed(global.prefs["Fullscreen"])
 		get_node("SoundEffectsToggle").set_pressed(global.prefs["Sound"])
 		get_node("WelcomeMsgToggle").set_pressed(global.prefs["ShowWelcomeMsg"])
+	$BackButton.connect("button_up", self, "_on_BackButton_pressed")
 
 func _on_FullScreenToggle_toggled( pressed ):
 	emit_signal("fullscreen_pressed", pressed)
@@ -29,5 +30,7 @@ func _on_WelcomeMsgToggle_toggled( pressed ):
 	emit_signal("show_welcome_message_pressed", null)
 
 func _on_BackButton_pressed():
+	var Desktop = get_node("../..")
+	Desktop.minimize(self)
 	savePrefs()
 	emit_signal("option_back_pressed", null)
